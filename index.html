@@ -12,10 +12,8 @@
             this.name = name;
             this.surname = surname;
             this.birthYear = birthYear;
-            this.attendance = [];
-            this.attendance.length = 10;
-            this.marks = [];
-            this.marks.length = 10;
+            this.attendance = new Array(10);
+            this.marks = new Array(10);
         }
 
         student.prototype.age = function() {
