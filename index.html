@@ -41,35 +41,26 @@
                     this.marks[i] = mark;
                     break;
                 }
-                
             }
         };
 
-        Object.defineProperty(student.prototype, 'present', {
-            get:
-                function() {
-                    for (let i = 0; i< this.attendance.length; i++) {
-                        if (this.attendance[i] === undefined) {
-                            this.attendance[i] = true;
-                            break;
-                        }
-                    
-                    }
+        student.prototype.present = function() {
+            for (let i = 0; i< this.attendance.length; i++) {
+                if (this.attendance[i] === undefined) {
+                    this.attendance[i] = true;
+                    break;
                 }
-        });
+            }
+        };
 
-        Object.defineProperty(student.prototype, 'absent', {
-            get:
-                function() {
-                    for (let i = 0; i< this.attendance.length; i++) {
-                        if (this.attendance[i] === undefined) {
-                            this.attendance[i] = false;
-                            break;
-                        }
-                    
-                    }
+        student.prototype.absent = function() {
+            for (let i = 0; i< this.attendance.length; i++) {
+                if (this.attendance[i] === undefined) {
+                    this.attendance[i] = false;
+                    break;
                 }
-        });
+            }
+        };
 
         student.prototype.summary = function() {
             const averageAttendance = this.averageMark(this.attendance);
@@ -91,16 +82,16 @@
         const student2 = new student('Ivan', 'Stepanenko', 1999);
         const student3 = new student('Petr', 'Dubrenko', 2001);
 
-        student1.present;
-        student1.present;
-        student1.present;
-        student1.present;
-        student1.present;
-        student1.present;
-        student1.present;
-        student1.present;
-        student1.present;
-        student1.present;
+        student1.present();
+        student1.present();
+        student1.present();
+        student1.present();
+        student1.present();
+        student1.present();
+        student1.present();
+        student1.present();
+        student1.present();
+        student1.present();
         student1.mark(7);
         student1.mark(8);
         student1.mark(5);
@@ -116,16 +107,16 @@
         console.log('Average Mark:', student1.averageMark());
         console.log('Summary:', student1.summary());
 
-        student2.present;
-        student2.present;
-        student2.present;
-        student2.present;
-        student2.absent;
-        student2.present;
-        student2.present;
-        student2.present;
-        student2.present;
-        student2.present;
+        student2.present();
+        student2.present();
+        student2.present();
+        student2.present();
+        student2.absent();
+        student2.present();
+        student2.present();
+        student2.present();
+        student2.present();
+        student2.present();
         student2.mark(10);
         student2.mark(10);
         student2.mark(10);
@@ -141,16 +132,16 @@
         console.log('Average Mark:', student2.averageMark());
         console.log('Summary:', student2.summary());
 
-        student3.absent;
-        student3.absent;
-        student3.absent;
-        student3.absent;
-        student3.absent;
-        student3.absent;
-        student3.absent;
-        student3.absent;
-        student3.absent;
-        student3.absent;
+        student3.absent();
+        student3.absent();
+        student3.absent();
+        student3.absent();
+        student3.absent();
+        student3.absent();
+        student3.absent();
+        student3.absent();
+        student3.absent();
+        student3.absent();
         student3.mark(0);
         student3.mark(0);
         student3.mark(0);
